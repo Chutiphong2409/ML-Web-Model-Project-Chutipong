@@ -220,18 +220,17 @@ with st.sidebar:
     photo=ROOT/"assets"/"student_photo.jpg"
     if photo.exists():
         st.image(str(photo),width=112)
+    st.markdown("**นายชุติพงศ์ ทองคำ**")
+    st.caption("รหัสนักศึกษา 664245053") 
     st.markdown("## 🌿 ML Studio")
-    st.caption("Explore • Train • Predict")
     st.divider()
     pages=["หน้าหลัก","K-Nearest Neighbor","Decision Tree","Support Vector Machine",
            "K-Means","Regression","Random Forest","สรุปโครงงาน"]
     page=st.radio("เมนูหลัก",pages,label_visibility="collapsed")
     st.divider()
-    st.markdown("**นายชุติพงศ์ ทองคำ**")
-    st.caption("รหัสนักศึกษา 664245053")
     st.caption("โครงงาน Machine Learning")
     st.markdown("---")
-    st.caption("A hands-on machine learning lab")
+    
 
 # ---------- Home ----------
 if page=="หน้าหลัก":
