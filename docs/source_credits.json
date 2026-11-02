@@ -1,0 +1,25 @@
+{
+  "project": "ML Final Project",
+  "author": "นายชุติพงศ์ ทองคำ",
+  "student_id": "664245053",
+  "sources": [
+    {
+      "name": "Scikit-learn datasets",
+      "url": "https://scikit-learn.org/stable/datasets.html"
+    },
+    {
+      "name": "Scikit-learn documentation",
+      "url": "https://scikit-learn.org/stable/"
+    },
+    {
+      "name": "Streamlit documentation",
+      "url": "https://docs.streamlit.io/"
+    }
+  ],
+  "synthetic_data": [
+    "Heart risk demo",
+    "Customer churn demo",
+    "House price regression demo",
+    "Student performance demo"
+  ]
+}
