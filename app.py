@@ -31,7 +31,7 @@ st.markdown("""
   --ink:#18352f; --forest:#174f43; --leaf:#2f806b;
   --mint:#dcefe7; --paper:#f7f8f2; --coral:#e8795b; --gold:#e8b65d;
 }
-.stApp { background:#000000; color: #ffffff; }
+.stApp { background:var(--paper); color:var(--ink); }
 [data-testid="stHeader"] { background:rgba(247,248,242,.92); }
 [data-testid="stSidebar"] {
   background:linear-gradient(165deg,#e2f0e8 0%,#d3e7dc 58%,#c4dfd2 100%);
