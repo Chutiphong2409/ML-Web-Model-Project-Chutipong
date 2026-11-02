@@ -26,88 +26,249 @@ st.set_page_config(page_title="ML Final Project | Chutipong", page_icon="🤖",
                    layout="wide", initial_sidebar_state="expanded")
 
 st.markdown("""
+
 <style>
 :root {
-  --ink:#18352f; --forest:#174f43; --leaf:#2f806b;
-  --mint:#dcefe7; --paper:#f7f8f2; --coral:#e8795b; --gold:#e8b65d;
+  --ink:#ffffff;
+  --forest:#101714;
+  --leaf:#35d49a;
+  --mint:#1b2923;
+  --paper:#080c0a;
+  --coral:#35d49a;
+  --gold:#a5f3ce;
 }
-.stApp { background:var(--paper); color:var(--ink); }
-[data-testid="stHeader"] { background:rgba(247,248,242,.92); }
+
+/* พื้นหลังหลัก */
+.stApp {
+  background:#080c0a !important;
+  color:#ffffff !important;
+}
+
+[data-testid="stHeader"] {
+  background:rgba(8,12,10,.95);
+}
+
+/* Sidebar */
 [data-testid="stSidebar"] {
-  background:linear-gradient(165deg,#e2f0e8 0%,#d3e7dc 58%,#c4dfd2 100%);
-  border-right:1px solid #c7ddd1;
+  background:linear-gradient(165deg,#101b16,#080d0a);
+  border-right:1px solid #263c31;
 }
-[data-testid="stSidebar"] * { color:#183b32 !important; }
+
+[data-testid="stSidebar"] * {
+  color:#e5fff1 !important;
+}
+
 [data-testid="stSidebar"] [data-testid="stRadio"] label {
-  padding:.55rem .7rem; border-radius:11px; margin:2px 0;
-  transition:background .15s ease;
+  padding:.55rem .7rem;
+  border-radius:11px;
+  margin:2px 0;
 }
+
 [data-testid="stSidebar"] [data-testid="stRadio"] label:hover {
-  background:rgba(47,128,107,.12);
+  background:rgba(53,212,154,.12);
 }
+
 [data-testid="stSidebar"] [data-testid="stRadio"] label:has(input:checked) {
-  background:#fff; box-shadow:0 3px 12px rgba(24,70,57,.08);
+  background:#1b3328;
+  box-shadow:0 3px 12px rgba(53,212,154,.12);
   font-weight:750;
 }
-.block-container { max-width:1260px; padding-top:2rem; padding-bottom:3rem; }
+
+/* พื้นที่เนื้อหา */
+.block-container {
+  max-width:1260px;
+  padding-top:2rem;
+  padding-bottom:3rem;
+}
+
+/* Hero */
 .hero {
-  background:linear-gradient(118deg,#173f36 0%,#236b58 72%,#39856d 100%);
-  border-radius:10px 34px 10px 34px; padding:34px 38px; color:#fff;
-  margin:0 0 26px 0; position:relative; overflow:hidden;
-  box-shadow:0 14px 30px rgba(28,76,61,.13);
-  border-left:7px solid var(--gold);
+  background:linear-gradient(118deg,#10251b,#126044 72%,#173d2c);
+  border-radius:10px 34px 10px 34px;
+  padding:34px 38px;
+  color:#fff;
+  margin:0 0 26px 0;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 14px 30px rgba(0,0,0,.35);
+  border-left:7px solid #35d49a;
 }
+
 .hero:after {
-  content:""; position:absolute; right:35px; bottom:-72px;
-  width:190px; height:190px; border:1px solid rgba(255,255,255,.22);
-  border-radius:42% 58% 55% 45%; transform:rotate(28deg);
-  box-shadow:0 0 0 22px rgba(255,255,255,.035),0 0 0 44px rgba(255,255,255,.025);
+  content:"";
+  position:absolute;
+  right:35px;
+  bottom:-72px;
+  width:190px;
+  height:190px;
+  border:1px solid rgba(53,212,154,.3);
+  border-radius:42% 58% 55% 45%;
+  transform:rotate(28deg);
+  box-shadow:0 0 0 22px rgba(53,212,154,.04),
+             0 0 0 44px rgba(53,212,154,.025);
 }
+
 .hero .eyebrow {
-  display:inline-block; color:#f8e4b5; border:1px solid rgba(248,228,181,.48);
-  background:rgba(255,255,255,.07); padding:6px 12px; border-radius:7px;
-  font-size:11px; letter-spacing:1px; margin-bottom:15px; font-weight:750;
+  display:inline-block;
+  color:#a5f3ce;
+  border:1px solid rgba(53,212,154,.48);
+  background:rgba(255,255,255,.07);
+  padding:6px 12px;
+  border-radius:7px;
+  font-size:11px;
+  letter-spacing:1px;
+  margin-bottom:15px;
+  font-weight:750;
 }
+
 .hero h1 {
-  color:white; font-size:clamp(1.55rem,3vw,2.35rem); line-height:1.25;
-  margin:0 0 10px 0; font-weight:800; max-width:850px;
+  color:#ffffff;
+  font-size:clamp(1.55rem,3vw,2.35rem);
+  line-height:1.25;
+  margin:0 0 10px 0;
+  font-weight:800;
+  max-width:850px;
 }
-.hero p { color:#e0f0e8; margin:0; font-size:.94rem; max-width:850px; }
-h1,h2,h3 { color:#1b493d; letter-spacing:-.02em; }
-h2 { margin-top:1.2rem; }
+
+.hero p {
+  color:#c5f5dc;
+  margin:0;
+  font-size:.94rem;
+  max-width:850px;
+}
+
+/* หัวข้อ */
+h1,h2,h3 {
+  color:#a5f3ce !important;
+  letter-spacing:-.02em;
+}
+
+h2 {
+  margin-top:1.2rem;
+}
+
+/* ข้อความ Label และคำอธิบาย */
+.stApp label,
+.stApp [data-testid="stWidgetLabel"],
+.stApp [data-testid="stWidgetLabel"] p {
+  color:#e5fff1 !important;
+  font-weight:600;
+}
+
+.stApp p,
+.stApp .stMarkdown,
+.stApp [data-testid="stCaptionContainer"] {
+  color:#d0ddd5;
+}
+
+/* กล่อง Metric */
 div[data-testid="stMetric"] {
-  background:#fff; border:1px solid #e2e9e1; border-top:3px solid #6ba88e;
-  padding:16px 17px; border-radius:5px 16px 5px 16px;
-  box-shadow:0 5px 16px rgba(35,73,59,.045);
+  background:#141c18;
+  border:1px solid #294536;
+  border-top:3px solid #35d49a;
+  padding:16px 17px;
+  border-radius:5px 16px 5px 16px;
+  box-shadow:0 5px 16px rgba(0,0,0,.25);
 }
-div[data-testid="stMetric"] label { color:#638075 !important; }
-div[data-testid="stMetric"] [data-testid="stMetricValue"] { color:#174f43; }
-div[data-testid="stTabs"] button { font-weight:700; color:#547166; }
+
+div[data-testid="stMetric"] label {
+  color:#a5c8b5 !important;
+}
+
+div[data-testid="stMetric"] [data-testid="stMetricValue"] {
+  color:#35d49a !important;
+}
+
+/* Tabs */
+div[data-testid="stTabs"] button {
+  font-weight:700;
+  color:#b6cfc1;
+}
+
 div[data-testid="stTabs"] button[aria-selected="true"] {
-  color:#1c6a55; border-bottom-color:#e8795b;
+  color:#35d49a;
+  border-bottom-color:#35d49a;
 }
+
+/* Form */
 div[data-testid="stForm"] {
-  background:#fff; border:1px solid #e0e9df; border-radius:16px 5px 16px 5px;
-  padding:20px; box-shadow:0 6px 20px rgba(35,73,59,.04);
+  background:#141c18;
+  border:1px solid #294536;
+  border-radius:16px 5px 16px 5px;
+  padding:20px;
+  box-shadow:0 6px 20px rgba(0,0,0,.25);
 }
-.stButton > button[kind="primary"], .stFormSubmitButton > button {
-  background:linear-gradient(100deg,#1c6a55,#3d9276); color:white; border:0;
-  border-radius:8px 8px 8px 2px; min-height:2.7rem; font-weight:750; width:100%;
-  box-shadow:0 4px 10px rgba(28,106,85,.14);
+
+/* ช่องกรอกข้อมูล */
+.stApp input,
+.stApp textarea,
+.stApp [data-baseweb="select"] > div {
+  background-color:#252b29 !important;
+  color:#ffffff !important;
+  border-color:#3a5145 !important;
 }
-.stButton > button[kind="primary"]:hover, .stFormSubmitButton > button:hover {
-  border:0; color:white; filter:brightness(1.08); transform:translateY(-1px);
+
+.stApp input::placeholder,
+.stApp textarea::placeholder {
+  color:#a0b2a8 !important;
 }
-[data-testid="stDataFrame"], [data-testid="stTable"] {
-  border:1px solid #e1e9e0; border-radius:12px; overflow:hidden;
+
+/* Slider */
+.stApp [data-testid="stSlider"] {
+  color:#35d49a !important;
 }
-[data-testid="stAlert"] { border-radius:10px; }
+
+/* ปุ่ม */
+.stButton > button[kind="primary"],
+.stFormSubmitButton > button {
+  background:linear-gradient(100deg,#087b54,#24c78d);
+  color:#ffffff !important;
+  border:0;
+  border-radius:8px 8px 8px 2px;
+  min-height:2.7rem;
+  font-weight:750;
+  width:100%;
+  box-shadow:0 4px 12px rgba(35,212,154,.18);
+}
+
+.stButton > button[kind="primary"]:hover,
+.stFormSubmitButton > button:hover {
+  border:0;
+  color:#ffffff !important;
+  filter:brightness(1.15);
+  transform:translateY(-1px);
+}
+
+/* ตาราง */
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+  border:1px solid #294536;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+/* Alert */
+[data-testid="stAlert"] {
+  border-radius:10px;
+}
+
+/* Expander */
 [data-testid="stExpander"] {
-  background:#fff; border:1px solid #e2e9e1; border-radius:12px;
+  background:#141c18;
+  border:1px solid #294536;
+  border-radius:12px;
 }
-.small-muted { color:#71877d; font-size:.82rem; }
-hr { border-color:#dce7dd; }
+
+.small-muted {
+  color:#a5b9ad;
+  font-size:.82rem;
+}
+
+hr {
+  border-color:#294536;
+}
 </style>
+
 """, unsafe_allow_html=True)
 
 # ---------- Reproducible teaching datasets ----------
